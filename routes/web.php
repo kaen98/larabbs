@@ -34,3 +34,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 // end -
 
 
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+// 上面代码等同于:
+// Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+// Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+// Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
+
