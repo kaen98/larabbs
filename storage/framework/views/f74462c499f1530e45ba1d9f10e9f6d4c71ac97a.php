@@ -32,9 +32,9 @@
 
                     <div class="form-group">
                         <select class="form-control" name="category_id" required>
-                            <option value="" hidden disabled selected>请选择分类</option>
+                            <option value="" hidden disabled <?php echo e($topic->id ? 'selected' : ''); ?>>请选择分类</option>
                             <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <option value="<?php echo e($value->id); ?>"><?php echo e($value->name); ?></option>
+                                <option value="<?php echo e($value->id); ?>" <?php echo e($topic->category_id == $value->id ? 'selected' : ''); ?>><?php echo e($value->name); ?></option>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                     </div>
