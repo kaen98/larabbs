@@ -12,11 +12,11 @@
                 <div class="media-body">
 
                     <div class="media-heading">
-                        <a href="<?php echo e(route('topics.show', [$topic->id])); ?>" title="<?php echo e($topic->title); ?>">
+                        <a href="<?php echo e($topic->link()); ?>" title="<?php echo e($topic->title); ?>">
                             <?php echo e($topic->title); ?>
 
                         </a>
-                        <a class="pull-right" href="<?php echo e(route('topics.show', [$topic->id])); ?>" >
+                        <a class="pull-right" href="<?php echo e($topic->link()); ?>" >
                             <span class="badge"> <?php echo e($topic->reply_count); ?> </span>
                         </a>
                     </div>
