@@ -42,15 +42,24 @@
 
                 </div>
 
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('update', $topic)): ?>
                 <div class="operate">
                     <hr>
                     <a href="<?php echo e(route('topics.edit', $topic->id)); ?>" class="btn btn-default btn-xs" role="button">
                         <i class="glyphicon glyphicon-edit"></i> 编辑
                     </a>
-                    <a href="#" class="btn btn-default btn-xs" role="button">
-                        <i class="glyphicon glyphicon-trash"></i> 删除
-                    </a>
+                    <form action="<?php echo e(route('topics.destroy', $topic->id)); ?>" method="post">
+                        <?php echo e(csrf_field()); ?>
+
+                        <?php echo e(method_field('DELETE')); ?>
+
+                        <button type="submit" class="btn btn-default btn-xs pull-left" style="margin-left: 6px">
+                            <i class="glyphicon glyphicon-trash"></i>
+                            删除
+                        </button>
+                    </form>
                 </div>
+                <?php endif; ?>
 
             </div>
         </div>
