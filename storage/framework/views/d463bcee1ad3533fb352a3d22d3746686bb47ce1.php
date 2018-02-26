@@ -3,7 +3,7 @@
 <ul class="list-group">
     <?php $__currentLoopData = $topics; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $topic): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <li class="list-group-item">
-            <a href="<?php echo e(route('topics.show', $topic->id)); ?>">
+            <a href="<?php echo e($topic->link()); ?>">
                 <?php echo e($topic->title); ?>
 
             </a>

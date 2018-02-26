@@ -36,4 +36,9 @@ class User extends Authenticatable
     {
         return $this->id == $topicModel->user_id;
     }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
 }

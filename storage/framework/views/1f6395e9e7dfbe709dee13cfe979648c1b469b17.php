@@ -37,10 +37,18 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#">Ta 的话题</a></li>
-                    <li><a href="#">Ta 的回复</a></li>
+                    <li class="<?php echo e(active_class(if_query('tab', null))); ?>">
+                        <a href="<?php echo e(route('users.show', $user->id)); ?>">Ta 的话题</a>
+                    </li>
+                    <li class="<?php echo e(active_class(if_query('tab', 'replies'))); ?>">
+                        <a href="<?php echo e(route('users.show', [$user->id, 'tab' => 'replies'])); ?>">Ta 的回复</a>
+                    </li>
                 </ul>
-                <?php echo $__env->make('users._topics', ['topics' => $user->topics()->recent()->paginate(5)], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php if(if_query('tab', 'replies')): ?>
+                    <?php echo $__env->make('users._replies', ['replies' => $user->replies()->with('topic')->recent()->paginate(5)], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php else: ?>
+                    <?php echo $__env->make('users._topics', ['topics' => $user->topics()->recent()->paginate(5)], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
             </div>
         </div>
 
