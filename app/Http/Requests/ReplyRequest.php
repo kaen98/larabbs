@@ -10,21 +10,17 @@ class ReplyRequest extends Request
         {
             // CREATE
             case 'POST':
-            {
-                return [
-                    // CREATE ROLES
-                ];
-            }
             // UPDATE
             case 'PUT':
             case 'PATCH':
-            {
-                return [
-                    // UPDATE ROLES
-                ];
-            }
             case 'GET':
             case 'DELETE':
+            {
+                // 包括 POST PUT PATCH GET DELETE
+                return [
+                    'content' => 'required|min:2',
+                ];
+            }
             default:
             {
                 return [];

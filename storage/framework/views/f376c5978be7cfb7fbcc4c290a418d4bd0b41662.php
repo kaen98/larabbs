@@ -67,7 +67,7 @@
         
         <div class="panel panel-default topic-reply">
             <div class="panel-body">
-                <?php echo $__env->make('topics._reply_box', ['topic' => $topic], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php echo $__env->renderWhen(Auth::check(), 'topics._reply_box', ['topic' => $topic], array_except(get_defined_vars(), array('__data', '__path'))); ?>
                 <?php echo $__env->make('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
             </div>
         </div>
