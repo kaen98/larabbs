@@ -17,11 +17,19 @@
                     <span class="meta" title="<?php echo e($reply->created_at); ?>"><?php echo e($reply->created_at->diffForHumans()); ?></span>
 
                     
+                    <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('destroy', $reply)): ?>
                     <span class="meta pull-right">
-                        <a title="删除回复">
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </a>
+                        <form action="<?php echo e(route('replies.destroy', $reply->id)); ?>" method="post">
+                            <?php echo e(csrf_field()); ?>
+
+                            <?php echo e(method_field('DELETE')); ?>
+
+                            <button type="submit" class="btn btn-default btn-xs pull-left">
+                                <i class="glyphicon glyphicon-trash"></i>
+                            </button>
+                        </form>
                     </span>
+                    <?php endif; ?>
                 </div>
                 <div class="reply-content">
                     <?php echo $reply->content; ?>
