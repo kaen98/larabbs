@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e51811929aa91a070181ac3094e67b60",
+    "content-hash": "1d9fe99c01293f4c86c87902d6a43475",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2458,16 +2458,16 @@
         },
         {
             "name": "summerblue/administrator",
-            "version": "v1.1.6",
+            "version": "v1.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/summerblue/administrator.git",
-                "reference": "fb1eafbe6c5422d10104e242415d815866e1009b"
+                "reference": "e775635f3d1d462ae88aaf2d080be863df3a5d54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/summerblue/administrator/zipball/fb1eafbe6c5422d10104e242415d815866e1009b",
-                "reference": "fb1eafbe6c5422d10104e242415d815866e1009b",
+                "url": "https://api.github.com/repos/summerblue/administrator/zipball/e775635f3d1d462ae88aaf2d080be863df3a5d54",
+                "reference": "e775635f3d1d462ae88aaf2d080be863df3a5d54",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2521,7 +2521,7 @@
                 "laravel",
                 "laravel-administrator"
             ],
-            "time": "2017-12-26T07:58:05+00:00"
+            "time": "2018-02-27T01:14:55+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
