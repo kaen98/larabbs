@@ -18,6 +18,11 @@ class AppServiceProvider extends ServiceProvider
 		\App\Models\Topic::observe(\App\Observers\TopicObserver::class);
 
         \Carbon\Carbon::setLocale('zh');
+
+        // heroku 上链接用 https
+        if(env('IS_IN_HEROKU')) {
+            \URL::forceScheme('https');
+        }
     }
 
     /**
