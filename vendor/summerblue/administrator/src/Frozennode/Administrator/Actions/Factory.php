@@ -172,7 +172,7 @@ class Factory
     public function getActions($override = false)
     {
         //make sure we only run this once and then return the cached version
-        if (!count($this->actions) || $override) {
+        if (!sizeof($this->actions) || $override) {
             $this->actions = array();
 
             //loop over the actions to build the list
@@ -194,7 +194,7 @@ class Factory
     public function getActionsOptions($override = false)
     {
         //make sure we only run this once and then return the cached version
-        if (!count($this->actionsOptions) || $override) {
+        if (!sizeof($this->actionsOptions) || $override) {
             $this->actionsOptions = array();
 
             //loop over the actions to build the list
@@ -216,7 +216,7 @@ class Factory
     public function getGlobalActions($override = false)
     {
         //make sure we only run this once and then return the cached version
-        if (!count($this->globalActions) || $override) {
+        if (!sizeof($this->globalActions) || $override) {
             $this->globalActions = array();
 
             //loop over the actions to build the list
@@ -238,7 +238,7 @@ class Factory
     public function getGlobalActionsOptions($override = false)
     {
         //make sure we only run this once and then return the cached version
-        if (!count($this->globalActionsOptions) || $override) {
+        if (!sizeof($this->globalActionsOptions) || $override) {
             $this->globalActionsOptions = array();
 
             //loop over the global actions to build the list
@@ -260,7 +260,7 @@ class Factory
     public function getActionPermissions($override = false)
     {
         //make sure we only run this once and then return the cached version
-        if (!count($this->actionPermissions) || $override) {
+        if (!sizeof($this->actionPermissions) || $override) {
             $this->actionPermissions = array();
             $model                   = $this->config->getDataModel();
             $options                 = $this->config->getOption('action_permissions');
