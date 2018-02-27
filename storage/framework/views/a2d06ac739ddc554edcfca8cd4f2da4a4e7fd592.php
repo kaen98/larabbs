@@ -12,7 +12,7 @@
     <meta name="description" content="<?php echo $__env->yieldContent('description', setting('seo_description', 'LaraBBS 爱好者社区。')); ?>" />
     <meta name="keyword" content="<?php echo $__env->yieldContent('keyword', setting('seo_keyword', 'LaraBBS,社区,论坛,开发者论坛')); ?>" />
     <!-- Styles -->
-    <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
     <?php echo $__env->yieldContent('styles'); ?>
 </head>
 
@@ -34,7 +34,7 @@
         <?php echo $__env->make('sudosu::user-selector', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php endif; ?>
     <!-- Scripts -->
-    <script src="<?php echo e(asset('js/app.js')); ?>"></script>
+    <script src="/js/app.js"></script>
     <?php echo $__env->yieldContent('scripts'); ?>
 </body>
 </html>
