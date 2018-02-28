@@ -41,8 +41,8 @@ class UsersTableSeeder extends Seeder
 
         // 单独处理第一个用户的数据
         $user = User::find(1);
-        $user->name = 'Summer';
-        $user->email = 'summer@yousails.com';
+        $user->name = 'Zhaokai';
+        $user->email = 'zhaokai@qq.com';
         $user->avatar = 'https://fsdhubcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png?imageView2/1/w/200/h/200';
         $user->save();
         // 初始化用户角色，将 1 号用户指派为『站长』
