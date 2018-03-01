@@ -27,3 +27,21 @@
         </div>
     </div>
 <?php endif; ?>
+
+<?php if(count($links)): ?>
+    <div class="panel panel-default">
+        <div class="panel-body active-users">
+
+            <div class="text-center">资源推荐</div>
+            <hr>
+            <?php $__currentLoopData = $links; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <a class="media" href="<?php echo e($link->link); ?>">
+                    <div class="media-body">
+                        <span class="media-heading"><?php echo e($link->title); ?></span>
+                    </div>
+                </a>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+        </div>
+    </div>
+<?php endif; ?>
