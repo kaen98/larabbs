@@ -18,6 +18,9 @@
                         <hr>
                         <h4><strong>注册于</strong></h4>
                         <p><?php echo e($user->created_at->diffForHumans()); ?></p>
+                        <hr>
+                        <h4><strong>最后活跃</strong></h4>
+                        <p title="<?php echo e($user->last_actived_at); ?>"><?php echo e($user->last_actived_at->diffForHumans()); ?></p>
                     </div>
                 </div>
             </div>
