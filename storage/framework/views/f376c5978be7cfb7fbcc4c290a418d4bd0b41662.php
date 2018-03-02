@@ -43,22 +43,23 @@
                 </div>
 
                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('update', $topic)): ?>
-                <div class="operate">
-                    <hr>
-                    <a href="<?php echo e(route('topics.edit', $topic->id)); ?>" class="btn btn-default btn-xs" role="button">
-                        <i class="glyphicon glyphicon-edit"></i> 编辑
-                    </a>
-                    <form action="<?php echo e(route('topics.destroy', $topic->id)); ?>" method="post">
-                        <?php echo e(csrf_field()); ?>
+                    <div class="operate">
+                        <hr>
+                        <a href="<?php echo e(route('topics.edit', $topic->id)); ?>" class="btn btn-default btn-xs pull-left" role="button">
+                            <i class="glyphicon glyphicon-edit"></i> 编辑
+                        </a>
 
-                        <?php echo e(method_field('DELETE')); ?>
+                        <form action="<?php echo e(route('topics.destroy', $topic->id)); ?>" method="post">
+                            <?php echo e(csrf_field()); ?>
 
-                        <button type="submit" class="btn btn-default btn-xs pull-left" style="margin-left: 6px">
-                            <i class="glyphicon glyphicon-trash"></i>
-                            删除
-                        </button>
-                    </form>
-                </div>
+                            <?php echo e(method_field('DELETE')); ?>
+
+                            <button type="submit" class="btn btn-default btn-xs pull-left" style="margin-left: 6px">
+                                <i class="glyphicon glyphicon-trash"></i>
+                                删除
+                            </button>
+                        </form>
+                    </div>
                 <?php endif; ?>
 
             </div>
