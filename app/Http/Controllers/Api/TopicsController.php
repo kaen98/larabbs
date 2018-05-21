@@ -19,7 +19,7 @@ class TopicsController extends Controller
         $topic->save();
 
         return $this->response->item($topic, new TopicTransformer())
-            ->setStatusCode();
+            ->setStatusCode(201);
     }
 
     public function update(TopicRequest $request, Topic $topic)
